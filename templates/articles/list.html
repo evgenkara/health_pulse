@@ -1,0 +1,49 @@
+<!-- templates/articles/list.html -->
+{% extends "base_with_sidebar.html" %} <!-- Меняем наследование -->
+
+{% block title %}Latest Health News | HealthPulse{% endblock %}
+
+{% block main_content %} <!-- Меняем block content на main_content -->
+    <!-- Заголовок -->
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800">Latest Articles</h2> <!-- Меняем цвет заголовка -->
+    </div>
+
+    <!-- Сетка статей -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for article in articles %}
+            <!-- Содержимое карточки статьи (как в предыдущем примере) -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full transition-shadow duration-300 hover:shadow-lg">
+                {% if article.image_url %}
+                    <div class="bg-gray-200 h-40 flex items-center justify-center">
+                        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="w-full h-full object-cover">
+                    </div>
+                {% else %}
+                    <div class="bg-gray-200 h-40 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-5xl text-indigo-300"></i>
+                    </div>
+                {% endif %}
+                <div class="p-6 flex-grow flex flex-col">
+                    <span class="inline-block bg-slate-100 text-slate-800 text-xs font-medium px-2 py-1 rounded-full mb-2"> <!-- Меняем цвет тега категории -->
+                        {{ article.get_category_display }}
+                    </span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                        <a href="{% url 'articles:article_detail' article.slug %}" class="text-link hover:underline">
+                            {{ article.title }}
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-3 flex-grow">
+                        {{ article.summary|default:article.processed_content|truncatewords:30 }}
+                    </p>
+                    <time class="text-xs text-gray-500 mb-3">{{ article.published_at|date:"M d, Y" }}</time>
+                    <a href="{% url 'articles:article_detail' article.slug %}" class="text-link font-medium text-sm hover:underline inline-flex items-center mt-auto">
+                        Read more
+                        <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                    </a>
+                </div>
+            </article>
+        {% empty %}
+            <p class="text-gray-500 text-center col-span-full">No articles available yet. Check back soon!</p>
+        {% endfor %}
+    </div>
+{% endblock %}
