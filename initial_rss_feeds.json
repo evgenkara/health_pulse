@@ -1,0 +1,145 @@
+[
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 4,
+  "fields": {
+    "url": "https://www.sciencedaily.com/rss/health_medicine.xml",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:23.460Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 17,
+  "fields": {
+    "url": "https://www.mindbodygreen.com/rss.xml",
+    "category": "lifestyle",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:58:19.733Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 20,
+  "fields": {
+    "url": "https://www.sciencedaily.com/rss/science_society/public_health.xml",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:34.092Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 21,
+  "fields": {
+    "url": "http://kffhealthnews.org/feed/",
+    "category": "lifestyle",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.842Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 22,
+  "fields": {
+    "url": "https://www.networkforphl.org/news-insights/feed/",
+    "category": "lifestyle",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.709Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 23,
+  "fields": {
+    "url": "https://feeds.npr.org/1128/rss.xml",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.325Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 24,
+  "fields": {
+    "url": "https://www.medscape.com/cx/rssfeeds/2700.xml",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.602Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 25,
+  "fields": {
+    "url": "https://www.medpagetoday.com/rss/headlines.xml",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.799Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 27,
+  "fields": {
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.510Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 28,
+  "fields": {
+    "url": "https://publichealthinsider.com/feed/",
+    "category": "lifestyle",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.433Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 29,
+  "fields": {
+    "url": "https://betterhealthforall.org/feed/",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:23.244Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 30,
+  "fields": {
+    "url": "https://feeds.nbcnews.com/nbcnews/public/health",
+    "category": "lifestyle",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:22.698Z",
+    "fetch_frequency": 30
+  }
+},
+{
+  "model": "rss_feeds.rssfeed",
+  "pk": 31,
+  "fields": {
+    "url": "http://feeds.newscientist.com/health",
+    "category": "medicine",
+    "is_active": true,
+    "last_fetched": "2025-11-06T15:57:23.267Z",
+    "fetch_frequency": 30
+  }
+}
+]

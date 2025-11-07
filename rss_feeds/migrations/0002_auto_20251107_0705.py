@@ -1,19 +1,23 @@
-# rss_feeds/migrations/0003_auto_20251107_1234.py (замените на реальное имя файла)
+# В файле rss_feeds/migrations/0002_auto_... (твой файл)
+# ... другие импорты ...
 from django.db import migrations
-import json # Импортируем json
+import json
+import os
+from django.conf import settings
 
-# Загружаем данные из файла
-with open('initial_rss_feeds.json', 'r', encoding='utf-8') as f:
+# Получаем путь к файлу initial_rss_feeds.json, относительно корня проекта
+file_path = os.path.join(settings.BASE_DIR, 'initial_rss_feeds.json')
+
+# Загружаем данные из файла, используя абсолютный путь
+with open(file_path, 'r', encoding='utf-8') as f:
     initial_data = json.load(f)
 
 def load_initial_data(apps, schema_editor):
     RSSFeed = apps.get_model('rss_feeds', 'RSSFeed')
-    # Используем bulk_create для эффективного добавления
     RSSFeed.objects.bulk_create([RSSFeed(**item['fields']) for item in initial_data], ignore_conflicts=True)
 
 def reverse_func(apps, schema_editor):
     RSSFeed = apps.get_model('rss_feeds', 'RSSFeed')
-    # Удаляем данные при откате миграции (опционально)
     urls_to_delete = [item['fields']['url'] for item in initial_data]
     RSSFeed.objects.filter(url__in=urls_to_delete).delete()
 
@@ -21,7 +25,7 @@ def reverse_func(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('rss_feeds', '0001'), # <-- ЗАМЕНИТЕ '0002' НА ПРЕДЫДУЩУЮ МИГРАЦИЮ
+        ('rss_feeds', '0001_initial'), # <-- Вот она, зависимость от 0001
     ]
 
     operations = [
